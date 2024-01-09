@@ -104,6 +104,17 @@ public class ListaCompraPojo implements ListaCompra.dao.ListaCompraDAO {
             }
             int cantidad = sc.nextInt();
 
+            while (cantidad < 1) {
+                System.out.println("Error, la cantidad debe ser un entero mayor o igual a 1.");
+                System.out.print("Introduzca la cantidad que quiere usar (debe ser un entero mayor o igual a 1): ");
+                while (!sc.hasNextInt()) {
+                    System.out.println("Error, no es un número válido.");
+                    System.out.print("Introduzca la cantidad que quiere usar (debe ser un entero mayor o igual a 1): ");
+                    sc.next();  
+                }
+                cantidad = sc.nextInt();
+            }
+
             for (Productos p : productosEncontrados) {
                 if (cantidad > p.getCantidad()) {
                     System.out.println("Error estas poniendo mas cantidad de la que hay");
@@ -138,6 +149,17 @@ public class ListaCompraPojo implements ListaCompra.dao.ListaCompraDAO {
             sc.next();
         }
         int cantidad = sc.nextInt();
+        
+        while (cantidad < 1) {
+            System.out.println("Error, la cantidad debe ser un entero mayor o igual a 1.");
+            System.out.print("Introduzca la cantidad que quiere usar (debe ser un entero mayor o igual a 1): ");
+            while (!sc.hasNextInt()) {
+                System.out.println("Error, no es un número válido.");
+                System.out.print("Introduzca la cantidad que quiere usar (debe ser un entero mayor o igual a 1): ");
+                sc.next();  
+            }
+            cantidad = sc.nextInt();
+        }
 
         List<Productos> productosEncontrados = obtenerProductoPorNombre(nombre);
 

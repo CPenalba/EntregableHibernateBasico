@@ -95,6 +95,3 @@ public class Main {
     }
 }
 
-//listado con orm
-
-//el champú
